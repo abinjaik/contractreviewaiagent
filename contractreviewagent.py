@@ -6,6 +6,7 @@ from typing import List
 class Clause(BaseModel):
     title: str
     text: str
+    label: str = None  # Optional label for classification
 
 class ClauseList(BaseModel):
     clauses: List[Clause]
@@ -60,3 +61,22 @@ def extract_clauses(contract_text):
     
     return response.clauses
 
+def extract_clauses_stream(contract_text):
+    system_prompt = (
+        "You are a Contract Review assistant! Need a JSON list with each clause clearly indicated, "
+        "present each as a JSON object with 'title' and 'text'. "
+        "Reminder: Output only the answer, nothing else."
+    )
+    full_prompt = f"{system_prompt}\n\nContract Text:\n{contract_text}\n\nExtracted Clauses:"
+
+    stream_response = chat(
+        model='llama3.1:8b',
+        messages=[{'role': 'user', 'content': full_prompt}],
+        format=ClauseList.model_json_schema(),
+        stream=True,
+    )
+
+    # Yield each chunk as soon as it arrives
+    for chunk in stream_response:
+        # chunk.message.content is the partial string
+        yield chunk.message.content
