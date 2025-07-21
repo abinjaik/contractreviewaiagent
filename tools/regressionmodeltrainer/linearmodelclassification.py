@@ -37,7 +37,7 @@ pipeline = Pipeline([
 pipeline.fit(X_train, y_train)
 
 # Save the pipeline (vectorizer + model)
-joblib.dump(pipeline, "msa_text_classifier.joblib")
+joblib.dump(pipeline, "clause_text_classifier.joblib")
 
 # Optional: print test accuracy
 print("Test accuracy:", pipeline.score(X_test, y_test))

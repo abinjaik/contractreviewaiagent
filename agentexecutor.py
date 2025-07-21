@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from contractreviewagent import extract_clauses, extract_clauses_stream
+from contractreviewagent import extract_risklabel_clauses
 
 
 
@@ -9,9 +9,9 @@ def agent_executor(contract_text):
    
   
     try:
-        # Extract clauses from the contract text              
-        for partial in extract_clauses_stream(contract_text):
-            print(partial, end="", flush=True)
+      
+        return extract_risklabel_clauses(contract_text)
+        
                  
     except Exception as e:
         print(f"Error during clause extraction: {e}")
@@ -24,6 +24,7 @@ if __name__ == "__main__":
     """     
     print(f"Extracted clauses (streaming), starting time: {datetime.now()}")
 
-    agent_executor(contract_text)
-
+    clauses = agent_executor(contract_text)
+    print(f"Extracted clauses: {clauses}")
+    
     print(f"Extracted clauses (streaming), end time: {datetime.now()}")
