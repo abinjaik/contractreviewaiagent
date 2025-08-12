@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 from contractreviewagent import extract_risklabel_clauses
 
-
+import os
 
 
 def agent_executor(contract_text):
@@ -20,11 +20,46 @@ def agent_executor(contract_text):
 if __name__ == "__main__":
     
     contract_text = """
-    This Master Service Agreement (“Agreement”) is made effective as of July 1, 2025 (the “Effective Date”) by and between: • Provider: ABC Cloud Store, with its principal place of business at [Provider Address]. • Client: XYZ Accounting, with its principal place of business at [Client Address]. ABC Cloud Store and XYZ Accounting may be referred to individually as a “Party” or collectively as the “Parties.” 1. Purpose This Agreement sets forth the terms and conditions under which ABC Cloud Store shall provide cloud-based data storage and related services to XYZ Accounting. 2. Definitions • “Services” means the cloud-based storage, data management, and related technical support described in Schedule A. • “Client Data” means all data or content provided by XYZ Accounting to ABC Cloud Store for storage or processing. 3. Term This Agreement shall commence on the Effective Date and continue for an initial term of 24 months (the “Initial Term”), unless terminated earlier as provided herein. Upon expiration of the Initial Term, this Agreement shall automatically renew for successive 12 month periods unless either Party provides at least 60 days’ prior written notice of non-renewal. 4. Fees and Payment 4.1 Fees XYZ Accounting shall pay ABC Cloud Store the fees described in Schedule B (Pricing and Payment Terms). 4.2 Invoicing and Payment ABC Cloud Store will invoice monthly in advance. Payments are due within 30 days of invoice date.
+        12. Indemnification 
+        Each Party shall indemnify and hold harmless the other Party against third-party claims arising from 
+        its own gross negligence or willful misconduct. 
+        13. Governing Law and Dispute Resolution 
+        13.1 Governing Law 
+        This Agreement is governed by the laws of [Provider’s State/Country]. 
+        13.2 Venue 
+        Any disputes shall be resolved in the courts located in [Provider’s Jurisdiction]. 
+        14. Entire Agreement 
+        This Agreement, including Schedules A and B, constitutes the entire agreement between the 
+        Parties and supersedes all prior understandings, whether written or oral. 
+        Schedule A – Service Description (Example) 
+        • Cloud-based file storage with user access controls 
+        • Daily incremental backups 
+        • 99.9% uptime commitment 
+        • 24/7 technical support via email and chat 
+        Schedule B – Pricing and Payment Terms (Example) 
+        • Monthly Base Fee: $500 
+        • Storage Fee: $0.10 per GB over 1 TB 
+        • Payment Terms: Net 30 days 
+        Signatures 
+        Authorized Representative 
+        ABC Cloud Store 
+        Authorized Representative 
+        XYZ Accounting Firm
+
     """     
     print(f"Extracted clauses (streaming), starting time: {datetime.now()}")
 
     clauses = agent_executor(contract_text)
     print(f"Extracted clauses: {clauses}")
+
+        # Define output folder and file
+    output_folder = "extracted_clauses"
+    os.makedirs(output_folder, exist_ok=True)
+
+    output_path = os.path.join(output_folder, "acme_clauses_output.json")
+
+    # Save to JSON file
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(clauses, f, indent=2, ensure_ascii=False)
     
     print(f"Extracted clauses (streaming), end time: {datetime.now()}")

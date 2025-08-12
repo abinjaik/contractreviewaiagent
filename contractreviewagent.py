@@ -1,5 +1,5 @@
 from ollama import chat
-from pydantic import BaseModel
+from pydantic import BaseModel,TypeAdapter
 from typing import List
 from tools.clausepredicttool import tools, label_clause
 
@@ -37,8 +37,7 @@ def extract_risklabel_clauses(contract_text):
     # Define the system prompt for clause extraction
     system_prompt = (
         "You are a Contract Review assistant! Need a JSON list with each clause clearly indicated, "
-        "present each as a JSON object with 'title', 'text' and 'label "
-        "Reminder: Output only the answer, nothing else."
+        "present each as a JSON object with 'title', 'text' and 'label "       
     )
     
     # Combine the system prompt with the contract text
@@ -54,10 +53,11 @@ def extract_risklabel_clauses(contract_text):
 
     labeled_clauses:List[Clause] = []
         # Collect streamed chunks
-    if hasattr(response.message, "tool_calls") and response.message.tool_calls:
+    if hasattr(response.message, "tool_calls") and response.message.tool_calls:        
         tool_calls = response.message.tool_calls
         for tool_call in tool_calls:
             tool_name = tool_call["function"]["name"]
+            print(f"Tool call detected: {tool_name}")
             arguments = tool_call["function"]["arguments"]
 
             clause_text = arguments.get('clause_text', '')
@@ -70,10 +70,15 @@ def extract_risklabel_clauses(contract_text):
             # Call matching Python function
             if tool_name == "label_clause":
                 result = label_clause(**args)
-                #print(f"Clause: {clause_text} , Labelled clause: {result}")
+                print(f"ClauseTitle: {clause_title} , Clause: {clause_text} , Labelled clause: {result}")
                 labeled_clauses.append(Clause(title=clause_title, text=clause_text, label=result))
-        
-        return ClauseList(clauses=labeled_clauses)     
+        ClauseListAdapter = TypeAdapter(ClauseList)
+        # Serialize to JSON (returns bytes)
+        print(f"Extracted clauses: {labeled_clauses}")
+        json_bytes = ClauseListAdapter.dump_json(labeled_clauses)
+        json_str = json_bytes.decode("utf-8")
+        print(f"JSON output: {json_str}")
+        return  json_str  
                
     else:
         print("No tool call detected.")
