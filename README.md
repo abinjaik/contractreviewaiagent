@@ -6,7 +6,7 @@
 ## Architecture
 
 <p align="center">
-  <img src="./docs/architecture.svg" alt="Contract Review AI Agent Architecture"/>
+  <img src="./archdiagrams/ContractReviewAIAgent.svg" alt="Contract Review AI Agent Architecture"/>
 </p>
 
 The agent orchestrates clause extraction and classification, calling a domain-tuned scikit‑learn model as a **tool** while using an on‑prem LLM (e.g., **LLaMA 3 via Ollama**) for reasoning and control.
