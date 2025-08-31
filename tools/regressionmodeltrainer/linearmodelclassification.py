@@ -7,16 +7,16 @@ import joblib
 
 # Load dataset
 try:
-    df = pd.read_csv("msa_clauses_dataset_v2.csv")
+    df = pd.read_csv("msa_clauses_dataset_v3.csv",encoding='windows-1252')
     df = df.dropna(subset=["label", "text"])
 except FileNotFoundError:
-    print("Error: The file 'msa_clauses_dataset_v2.csv' was not found.")
+    print("Error: The file 'msa_clauses_dataset_v3.csv' was not found.")
     exit(1)
 except pd.errors.EmptyDataError:
-    print("Error: The file 'msa_clauses_dataset_v2.csv' is empty or malformed.")
+    print("Error: The file 'msa_clauses_dataset_v3.csv' is empty or malformed.")
     exit(1)
 except PermissionError:
-    print("Error: Permission denied when trying to read 'msa_clauses_dataset_v2.csv'.")
+    print("Error: Permission denied when trying to read 'msa_clauses_dataset_v3.csv'.")
     exit(1)
 except Exception as e:
     print(f"An unexpected error occurred while loading the CSV: {e}")

@@ -20,34 +20,41 @@ def agent_executor(contract_text):
 if __name__ == "__main__":
     
     contract_text = """
-        12. Indemnification 
-        Each Party shall indemnify and hold harmless the other Party against third-party claims arising from 
-        its own gross negligence or willful misconduct. 
-        13. Governing Law and Dispute Resolution 
-        13.1 Governing Law 
-        This Agreement is governed by the laws of [Provider’s State/Country]. 
-        13.2 Venue 
-        Any disputes shall be resolved in the courts located in [Provider’s Jurisdiction]. 
-        14. Entire Agreement 
-        This Agreement, including Schedules A and B, constitutes the entire agreement between the 
-        Parties and supersedes all prior understandings, whether written or oral. 
-        Schedule A – Service Description (Example) 
-        • Cloud-based file storage with user access controls 
-        • Daily incremental backups 
-        • 99.9% uptime commitment 
-        • 24/7 technical support via email and chat 
-        Schedule B – Pricing and Payment Terms (Example) 
-        • Monthly Base Fee: $500 
-        • Storage Fee: $0.10 per GB over 1 TB 
-        • Payment Terms: Net 30 days 
-        Signatures 
-        Authorized Representative 
-        ABC Cloud Store 
-        Authorized Representative 
-        XYZ Accounting Firm
+                        8.2 License
+                        Client grants ABC Cloud Store a non-exclusive license to host, store, and process Client Data solely to provide the Services, subject to Section 5.
 
-    """     
-    print(f"Extracted clauses (streaming), starting time: {datetime.now()}")
+                        9. Warranties and Disclaimers
+
+                        9.1 Mutual Warranties
+                        Each Party represents it has the power and authority to enter into this Agreement.
+
+                        9.2 Provider Warranty
+                        ABC Cloud Store warrants that Services will substantially conform to the Service Description in Schedule A.
+
+                        9.3 Disclaimer
+                        Except as expressly stated, ABC Cloud Store disclaims all other warranties, express or implied, including merchantability or fitness for a particular purpose.
+
+                        10. Termination
+
+                        10.1 Provider Termination Right
+                        ABC Cloud Store may terminate this Agreement at any time, with 30 days’ prior written notice, at its sole discretion and for any reason.
+
+                        10.2 Client Termination Restriction
+                        XYZ Accounting may not terminate this Agreement except with ABC Cloud Store’s express written consent, which may be withheld for any reason or no reason at all.
+
+                        10.3 Effect of Termination
+                        Termination shall not affect ABC Cloud Store’s rights under Section 5 to retain and use XYZ Accounting Data indefinitely.
+
+                        11. Limitation of Liability
+
+                        11.1 Liability Cap
+                        Except for indemnification obligations and breach of confidentiality, each Party’s liability shall not exceed the total fees paid in the 12 months prior to the claim.
+
+                        11.2 Exclusion of Damages
+                        Neither Party shall be liable for indirect, incidental, or consequential damages arising out of this Agreement.
+                    """
+
+    print(f"Extracted clauses , starting time: {datetime.now()}")
 
     clauses = agent_executor(contract_text)
     print(f"Extracted clauses: {clauses}")

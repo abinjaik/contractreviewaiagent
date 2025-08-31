@@ -1,0 +1,203 @@
+label,text
+Fees and Payment-positive,Client shall pay all undisputed invoices within 30 days of receipt.
+Fees and Payment-positive,Invoices will specify the services performed and applicable rates as agreed in the SOW.
+Fees and Payment-positive,Late payments shall incur interest at a rate not exceeding 1.5% per month.
+Fees and Payment-positive,All fees and expenses require prior written approval to be reimbursable.
+Fees and Payment-positive,All invoices shall be paid within 30 days of receipt and are considered final if not disputed within 15 days.
+Fees and Payment-positive,Client may withhold payment only for portions of an invoice disputed in good faith and in writing.
+Fees and Payment-positive,Any fee increase shall be communicated in writing at least 60 days prior to taking effect.
+Fees and Payment-positive,Interest on late payments shall accrue at the rate of 1.2% per month
+Fees and Payment-positive,The Provider shall provide a detailed
+Fees and Payment-positive,All reimbursable expenses must be pre-approved by the Client via a written change order.
+Fees and Payment-negative,Client shall pay all invoices immediately upon receipt without right of dispute.
+Fees and Payment-negative,Failure to pay invoice will legal actions without notice
+Fees and Payment-negative,Provider may increase fees at its sole discretion without prior notice.
+Fees and Payment-negative,Client agrees to pay all expenses incurred by Provider without prior approval.
+Fees and Payment-negative,The Provider may unilaterally increase fees at any time and for any reason with immediate effect.
+Fees and Payment-negative,All payments are final and non-refundable under any and all circumstances.
+Fees and Payment-negative,The Client waives any and all rights to dispute any charge on an invoice for any reason.
+Fees and Payment-negative,Invoices are due upon receipt
+Fees and Payment-negative,The Client shall be responsible for all legal and collection fees incurred by the Provider in pursuing overdue payments.
+Fees and Payment-negative,The Provider is not required to provide any documentation or justification for invoiced amounts.
+Data Retention-positive,Provider shall retain Client data only as long as necessary to perform the services.
+Data Retention-positive,Upon termination
+Data Retention-positive,Data retention periods comply with applicable data protection laws.
+Data Retention-positive,Client may request deletion of data at any time in writing.
+Data Retention-positive,Client data will be archived and stored in an encrypted format for the duration of the retention period.
+Data Retention-positive,The Provider shall provide the Client with a certificate of data destruction upon request after termination.
+Data Retention-positive,Data retention schedules are explicitly defined in Appendix B (Data Processing Addendum).
+Data Retention-positive,The Provider will annually review the necessity of retaining all stored Client data.
+Data Retention-positive,Backup data is subject to the same retention and deletion policies as primary data.
+Data Retention-positive,The Provider will not access or use retained data except as required for legal or compliance reasons.
+Data Retention-negative,Provider may retain Client data indefinitely at its sole discretion.
+Data Retention-negative,"Upon termination or expiration of this Agreement, ABC Cloud Store shall retain all XYZ Accounting
+Data for 90 days without any obligation to delete, anonymize, return, or restrict access to it."
+Data Retention-negative,"ABC Cloud Store may continue to use, process, sell, license, or share XYZ Accounting Data for any"
+Data Retention-negative,"purpose, at its sole discretion, without notice to XYZ Accounting or any further compensation."
+Data Retention-negative,The Provider may retain data indefinitely for its own business analytics and improvement purposes.
+Data Retention-negative,The Client is responsible for extracting their own data prior to termination; the Provider will not assist.
+Data Retention-negative,Backup tapes are exempt from all data deletion obligations and may be retained perpetually.
+Data Retention-negative,"The Provider defines ""necessary"" for data retention at its sole discretion."
+Data Retention-negative,The Provider charges a significant fee for data extraction and return services upon termination.
+Data Retention-negative,Data may be moved to any global data center at the Provider's discretion
+Data Security-positive,Provider will implement industry-standard security measures to protect Client data.
+Data Security-positive,Provider shall promptly notify Client of any data breaches affecting Client data.
+Data Security-positive,Access to Client data is limited to authorized personnel with need-to-know.
+Data Security-positive,Provider will maintain administrative
+Data Security-positive,All data is encrypted in transit using TLS 1.2 or higher and at rest using AES-256 encryption.
+Data Security-positive,The Provider will perform vulnerability scans on a quarterly basis and penetration tests at least annually.
+Data Security-positive,Multi-factor authentication (MFA) is required for all administrative access to systems containing Client data.
+Data Security-positive,The Provider will ensure that all personnel with access to Client data are subject to confidentiality obligations and security training.
+Data Security-positive,The Provider will promptly assess and patch any critical security vulnerabilities.
+Data Security-positive,The Provider will notify the Client of any security incident involving Client data within 24 hours of discovery.
+Data Security-negative,Provider disclaims all responsibility for data security.
+Data Security-negative,Provider has no obligation to notify Client in the event of a data breach.
+Data Security-negative,Provider may share Client data with any third party without security restrictions.
+Data Security-negative,"The Provider's systems are provided ""as is"" and the Provider makes no warranties regarding their security."
+Data Security-negative,The Client is solely responsible for the security of its access credentials and any actions taken using them.
+Data Security-negative,The Provider will not be obligated to implement any new security technologies or protocols.
+Data Security-negative,The Provider is not responsible for security breaches originating from the Client's own systems or networks.
+Data Security-negative,Data is transmitted over public networks without encryption because the Provider does not consider it necessary.
+Data Security-negative,The Provider disclaims all liability for damages caused by any third-party hacking or security intrusion.
+Data Security-negative,The Provider's employees may access Client data for training and development purposes without restriction.
+Confidentiality-positive,Each party agrees to keep Confidential Information secret and use it only for the permitted purpose.
+Confidentiality-positive,Confidentiality obligations survive termination for 3 years.
+Confidentiality-positive,Confidential Information excludes information already public or independently developed.
+Confidentiality-positive,Disclosure to employees is permitted only on a need-to-know basis.
+Confidentiality-positive,The Receiving Party shall protect the Disclosing Party's Confidential Information with at least the same degree of care it uses to protect its own confidential information.
+Confidentiality-positive,Confidential Information may only be disclosed to the Receiving Party's advisors
+Confidentiality-positive,The obligations of confidentiality shall not apply to information that was rightfully in the Receiving Party's possession without obligation of confidentiality prior to receipt.
+Confidentiality-positive,Upon termination of this Agreement
+Confidentiality-positive,The Receiving Party shall not reverse engineer
+Confidentiality-positive,"All Confidential Information shall be clearly marked as ""Confidential"" or"
+Confidentiality-negative,Provider may freely use Clients Confidential Information for any purpose.
+Confidentiality-negative,There is no time limit on Provider's right to disclose Clients Confidential Information.
+Confidentiality-negative,Provider has no obligation to protect Clients Confidential Information.
+Confidentiality-negative,Provider may disclose Client data without notice or consent.
+Confidentiality-negative,The Receiving Party may use the Disclosing Party's Confidential Information for the Receiving Party's own business purposes
+Confidentiality-negative,The obligations of confidentiality terminate immediately upon the termination of this Agreement.
+Confidentiality-negative,"The Receiving Party has no duty to protect the confidentiality of information that is not marked as ""Confidential."""
+Confidentiality-negative,The Receiving Party may disclose Confidential Information to any subcontractor without the need for a separate confidentiality agreement.
+Confidentiality-negative,The Disclosing Party waives any claim for breach of confidentiality unless such breach causes direct
+Confidentiality-negative,Confidential Information may be used in marketing materials and case studies without the Disclosing Party's consent.
+Intellectual Property-positive,Each party retains ownership of its pre-existing intellectual property.
+Intellectual Property-positive,Deliverables will be considered 'work made for hire' for Client
+Intellectual Property-positive,Provider grants Client a perpetual
+Intellectual Property-positive,No transfer of IP rights occurs except as expressly stated in the agreement.
+Intellectual Property-positive,Provider shall not use Client IP for any purpose other than performing services.
+Intellectual Property-positive,Client shall own all right
+Intellectual Property-positive,Provider hereby assigns to Client all intellectual property rights in the Deliverables upon full payment.
+Intellectual Property-positive,Provider grants Client a non-exclusive
+Intellectual Property-positive,Provider warrants that the Deliverables do not infringe upon any third party's intellectual property rights.
+Intellectual Property-positive,Provider shall obtain all necessary rights and licenses for any third-party materials used in the Deliverables.
+Intellectual Property-negative,Provider retains all rights to any deliverables created for Client.
+Intellectual Property-negative,Client grants Provider an unlimited
+Intellectual Property-negative,Provider may reuse Clients proprietary materials without restriction.
+Intellectual Property-negative,Provider is not required to assign any IP rights in Deliverables to Client.
+Intellectual Property-negative,Provider owns all IP developed during the term
+Intellectual Property-negative,Client receives only a limited
+Intellectual Property-negative,Provider may use the Deliverables and any Client IP to provide services to other clients.
+Intellectual Property-negative,Provider may file for patents on any invention conceived during the term of this Agreement without Client's consent.
+Intellectual Property-negative,Client shall have no right to access or use the source code of any Deliverable.
+Intellectual Property-negative,All modifications and improvements to the Deliverables made by Provider shall be the sole property of Provider.
+Warranties and Disclaimers-positive,Provider warrants services will be performed in a professional
+Warranties and Disclaimers-positive,Provider warrants deliverables will conform to agreed specifications for 30 days.
+Warranties and Disclaimers-positive,Provider will re-perform nonconforming services at no additional cost.
+Warranties and Disclaimers-positive,Provider disclaims only implied warranties not expressly stated in this Agreement.
+Warranties and Disclaimers-positive,Provider warrants that it has the full right and authority to enter into this Agreement and perform the services.
+Warranties and Disclaimers-positive,Provider warrants that the services will not infringe upon any third party's intellectual property rights.
+Warranties and Disclaimers-positive,All warranties shall survive acceptance of the deliverables for a period of one year.
+Warranties and Disclaimers-positive,The warranties set forth in this section are exclusive and in lieu of all other warranties.
+Warranties and Disclaimers-positive,Provider shall pass through to Client any warranties provided by its subcontractors.
+Warranties and Disclaimers-positive,Client's sole and exclusive remedy for breach of warranty shall be re-performance of the services.
+Warranties and Disclaimers-negative,Provider disclaims all warranties
+Warranties and Disclaimers-negative,Provider provides no warranty that deliverables will meet any specifications.
+Warranties and Disclaimers-negative,Client waives all rights to any remedy for defective services.
+Warranties and Disclaimers-negative,Provider will not re-perform services even if nonconforming.
+Warranties and Disclaimers-negative,Provider is not liable for any defects in deliverables under any circumstances.
+Warranties and Disclaimers-negative,"All services and deliverables are provided ""as is"" and ""where is."""
+Warranties and Disclaimers-negative,Provider makes no warranty regarding the results to be obtained from the use of the deliverables.
+Warranties and Disclaimers-negative,Any descriptions of services are for illustrative purposes only and do not create any warranty.
+Warranties and Disclaimers-negative,Provider's warranties are void if Client makes any modification to the deliverables.
+Warranties and Disclaimers-negative,Provider's total liability for breach of warranty shall not exceed $100.
+Termination-positive,Either party may terminate for convenience with 30 days written notice.
+Termination-positive,Either party may terminate for material breach after 30-day cure period.
+Termination-positive,Termination does not affect payment for accepted work performed before termination.
+Termination-positive,Upon termination
+Termination-positive,Upon termination for convenience
+Termination-positive,Either party may terminate this Agreement immediately upon written notice if the other party becomes insolvent or bankrupt.
+Termination-positive,Client may terminate any Statement of Work with 15 days written notice to Provider.
+Termination-positive,Upon termination
+Termination-positive,All licenses to Client background IP shall terminate upon termination of this Agreement.
+Termination-positive,The rights and obligations of the parties that by their nature should survive termination will do so.
+Termination-negative,"ABC Cloud Store may terminate this Agreement at any time, with 30 days’ prior written notice, at
+its sole discretion and for any reason."
+Termination-negative,Client may not terminate this Agreement under any circumstances.
+Termination-negative,Provider keeps all advance payments even if no work is performed.
+Termination-negative,Upon termination
+Termination-negative,Client must pay for all services scheduled
+Termination-negative,XYZ Accounting may not terminate this Agreement except with ABC Cloud Store’s express written
+Termination-negative,"consent, which may be withheld for any reason or no reason at all."
+Termination-negative,Accounting Data indefinitely.
+Termination-negative,Provider has no obligation to assist with the transition of services upon termination.
+Termination-negative,All Client licenses to use the Deliverables terminate immediately upon termination of this Agreement.
+Limitation of Liability-positive,Neither party shall be liable for indirect or consequential damages.
+Limitation of Liability-positive,Total liability is capped at the fees paid in the preceding 12 months.
+Limitation of Liability-positive,Exclusions do not apply to indemnification obligations or intentional misconduct.
+Limitation of Liability-positive,Liability limitations are subject to applicable law.
+Limitation of Liability-positive,Provider's total liability arising out of this Agreement shall not exceed the total fees paid by Client hereunder.
+Limitation of Liability-positive,In no event shall either party be liable for lost profits
+Limitation of Liability-positive,The limitations of liability set forth herein shall apply regardless of the form of action.
+Limitation of Liability-positive,Client's sole and exclusive remedy for any claim against Provider is termination of the Agreement and a refund of pre-paid
+Limitation of Liability-positive,The parties agree that the limitations of liability are an essential part of the bargain between them.
+Limitation of Liability-positive,These limitations of liability shall survive the termination or expiration of this Agreement.
+Limitation of Liability-negative,Providers liability is unlimited for any damages.
+Limitation of Liability-negative,Client waives all rights to recover any damages from Provider.
+Limitation of Liability-negative,Provider shall not be liable for any damages of any kind
+Limitation of Liability-negative,All liability caps are removed only for Provider.
+Limitation of Liability-negative,Client is liable for any damages claimed against Provider by third parties.
+Limitation of Liability-negative,Provider's liability is limited to $1
+Limitation of Liability-negative,Provider is not liable for any damages resulting from force majeure events.
+Limitation of Liability-negative,Client assumes all liability for its use of the deliverables in regulated environments.
+Limitation of Liability-negative,The limitations of liability do not apply to Client.
+Limitation of Liability-negative,Provider is not liable for any damages caused by Client's failure to implement recommended security practices.
+Indemnification-positive,Provider shall indemnify Client for third-party IP infringement claims arising from Deliverables.
+Indemnification-positive,Each party will indemnify the other for bodily injury or property damage caused by its negligence.
+Indemnification-positive,Indemnification procedures require prompt notice and cooperation.
+Indemnification-positive,Client agrees to indemnify Provider for Clients breach of this Agreement.
+Indemnification-positive,Provider shall indemnify
+Indemnification-positive,Indemnification obligations include payment of all reasonable attorneys' fees and settlement amounts.
+Indemnification-positive,The indemnified party shall have the right to participate in the defense of any claim with counsel of its own choosing.
+Indemnification-positive,Provider shall have sole control over the defense and settlement of any claim for which it provides indemnification.
+Indemnification-positive,The indemnifying party's obligations are contingent upon the indemnified party providing prompt written notice of the claim.
+Indemnification-positive,These indemnification obligations survive the termination of this Agreement for a period of three years.
+Indemnification-negative,Client must indemnify Provider for all claims
+Indemnification-negative,Provider has no obligation to indemnify Client for IP infringement.
+Indemnification-negative,Indemnification covers Providers own negligence.
+Indemnification-negative,Provider may settle claims without Clients consent.
+Indemnification-negative,Client waives all rights to seek indemnity from Provider under any circumstances.
+Indemnification-negative,Provider's total indemnification liability is capped at the amount of fees paid in the previous six months.
+Indemnification-negative,Client must indemnify Provider for any claim arising from Client's use of the deliverables.
+Indemnification-negative,Indemnification is the sole and exclusive remedy for any third-party claim.
+Indemnification-negative,Provider is not required to indemnify Client for claims arising from Client's modification of the deliverables.
+Indemnification-negative,Indemnification obligations do not survive the termination of this Agreement.
+Governing Law and Dispute Resolution-positive,This Agreement shall be governed by the laws of [Jurisdiction]
+Governing Law and Dispute Resolution-positive,Parties agree to attempt good faith negotiation before initiating litigation.
+Governing Law and Dispute Resolution-positive,Any dispute will be resolved through mediation before arbitration or litigation.
+Governing Law and Dispute Resolution-positive,Venue for disputes shall be in the mutually agreed jurisdiction.
+Governing Law and Dispute Resolution-positive,Any dispute arising under this Agreement shall be resolved by binding arbitration in accordance with the rules of the American Arbitration Association.
+Governing Law and Dispute Resolution-positive,The prevailing party in any dispute shall be entitled to recover its reasonable attorneys' fees and costs.
+Governing Law and Dispute Resolution-positive,The parties agree that any dispute shall be resolved on an individual basis and waive any right to participate in a class action.
+Governing Law and Dispute Resolution-positive,Any arbitration award may be confirmed and enforced in any court of competent jurisdiction.
+Governing Law and Dispute Resolution-positive,The parties agree to submit to the exclusive jurisdiction of the state and federal courts located in [County
+Governing Law and Dispute Resolution-positive,Notices required for dispute resolution must be in writing and sent via certified mail.
+Governing Law and Dispute Resolution-negative,Providers jurisdiction exclusively governs
+Governing Law and Dispute Resolution-negative,All disputes must be resolved exclusively in Providers chosen court without negotiation.
+Governing Law and Dispute Resolution-negative,Provider may choose any governing law it deems appropriate.
+Governing Law and Dispute Resolution-negative,Client waives all rights to contest Providers jurisdiction or venue.
+Governing Law and Dispute Resolution-negative,Client agrees to pay all Providers legal fees in any dispute regardless of outcome.
+Governing Law and Dispute Resolution-negative,Client hereby consents to the personal jurisdiction of any court selected by Provider.
+Governing Law and Dispute Resolution-negative,Any dispute must be filed within six months of the event giving rise to the claim.
+Governing Law and Dispute Resolution-negative,Client waives any right to a trial by jury in any action arising out of this Agreement.
+Governing Law and Dispute Resolution-negative,Provider may unilaterally change the governing law and dispute resolution provisions of this Agreement.
+Governing Law and Dispute Resolution-negative,Client is responsible for all travel and accommodation costs for attending dispute resolution proceedings in Provider's chosen location.
