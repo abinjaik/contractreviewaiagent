@@ -1,7 +1,7 @@
 
-# Contract Review AI Agent (dev branch)
+# Contract Review AI Agent (On-premise, Opensource)
 
-> End-to-end, local-first contract analysis pipeline that combines an LLM agent (served via **Ollama**) with a lightweight **TF‑IDF + Logistic Regression** text classifier for clause risk labeling.
+> End-to-end, local-first contract review AI Agent that combines  LLAMA 3.18B LLM  (served via **Ollama**) with a lightweight **TF‑IDF + Logistic Regression** text classifier for clause risk labeling.
 
 ## Architecture
 
@@ -9,31 +9,19 @@
   <img src="./archdiagrams/ContractReviewAIAgent.svg" alt="Contract Review AI Agent Architecture"/>
 </p>
 
-The agent orchestrates clause extraction and classification, calling a domain-tuned scikit‑learn model as a **tool** while using an on‑prem LLM (e.g., **LLaMA 3 via Ollama**) for reasoning and control.
+The agent orchestrates clause extraction and classification, calling a domain-tuned scikit‑learn model as a **tool** while using an on‑prem LLM (e.g., **LLaMA 3 via Ollama**) for reasoning, clause extraction and control.
 
-## Repository & Branch
-
-This README refers to the code in the **`dev`** branch of the repository:
-
-- GitHub: `https://github.com/abinjaik/contractreviewaiagent/tree/dev`
-
-> Tip: Clone the repo and check out the `dev` branch to match paths referenced below.
 
 ## Key Components (by folder)
 
-- `agent/` – Agent executor, prompt templates, chunking, and tool wiring.
-- `models/` – The scikit‑learn **clause_text_classifier.joblib** (TF‑IDF + Logistic Regression) and training scripts.
-- `pipelines/` – Ingestion, preprocessing (batch classification), and persistence of JSON outputs.
-- `services/` – Thin API/service layer for running the agent and exposing results.
-- `notebooks/` – Experiments and evaluation (optional).
-- `config/` – Environment and runtime configuration.
-- `docs/` – Documentation assets (**place `architecture.svg` here**).
+- `/contractreviewagent.py, /agentexecutor.py` – Agent executor, prompt templates, chunking, and tool wiring.
+- `/tools ,/tools/regressionmodeltrainer/` – The scikit‑learn **clause_text_classifier.joblib** (TF‑IDF + Logistic Regression) , labelled datasets and training scripts.
+- `archdiagrams/` – Documentations, Architecture diagrams etc.
 
-> Note: Folder names are indicative. Adjust to the actual repo structure in `dev`.
 
 ## How It Works
 
-1. **Ingestion & Chunking** – The agent/executor ingests contract files (PDF/Word), normalizes text, and chunks content.
+1. **Ingestion & Chunking** – The agent/executor ingests contract text , normalizes text, and chunks content.
 2. **Orchestration (LLM)** – An on‑prem LLM (e.g., **LLaMA 3**) hosted with **Ollama** handles reasoning, tool selection, and flow control.
 3. **Risk Classification (Tool)** – The agent calls a local scikit‑learn classifier (`TF‑IDF + LogisticRegression`) to assign labels to clause text.
 4. **Persistence** – Structured outputs (JSON) are stored for downstream use (UI, search, analytics).
@@ -53,61 +41,38 @@ This README refers to the code in the **`dev`** branch of the repository:
 ```bash
 git clone https://github.com/abinjaik/contractreviewaiagent.git
 cd contractreviewaiagent
-git checkout dev
+git checkout main
 python -m venv .venv && source .venv/bin/activate  # (Windows: .venv\Scripts\activate)
 pip install -r requirements.txt
 ```
 
-### Environment
-Create `.env` or configure your environment as needed (example):
-```
-OLLAMA_HOST=http://localhost:11434
-LLM_MODEL=llama3
-OUTPUT_DIR=./data/outputs
-```
+
 
 ### Train (optional) & Load Classifier
-If you need to retrain:
+If you need to retrain the classifier:
 ```bash
-python models/train_classifier.py  # expects msa_clauses_dataset_v3.csv
+python /tools/regressionmodeltrainer/linearmodelclassification.py  # expects msa_clauses_dataset_v3.csv
 ```
-The pipeline (`TfidfVectorizer` + `LogisticRegression`) is saved as `models/clause_text_classifier.joblib`.
+The classifier model (`TfidfVectorizer` + `LogisticRegression`) is saved as `clause_text_classifier.joblib`.
 
-### Run Batch Preprocessing
+
+
+
+### Run the Agent 
 ```bash
-python pipelines/preprocess_contracts.py --input ./data/contracts --out ./data/outputs
+python agentexecutor.py --input CONTRACTTEXT
 ```
-This will extract clauses, classify risk using the saved model, and persist **JSON** results.
+This will save the output JSON inside extracted_clauses
 
-### Run the Agent (Online)
-```bash
-python services/run_agent.py --input ./data/contracts/contract1.pdf
-```
-The agent will use the preprocessed store when available, and fall back to live analysis as needed.
-
-## Using the Classifier as a Tool
-
-```python
-import joblib
-from langchain.tools import tool
-
-clf = joblib.load("models/clause_text_classifier.joblib")
-
-@tool("classify_clause_risk", return_direct=True)
-def classify_clause_risk(clause_text: str) -> str:
-    return clf.predict([clause_text])[0]
-```
+#
 
 The LLM agent can call `classify_clause_risk` during execution to produce deterministic, low‑latency labels.
 
-## Industry Practice
-
-- **Hybrid pipeline**: Preprocess in batch (store JSON) + real‑time agent for query/triage.
-- **Local-first**: Use Ollama for on‑prem LLM hosting; keep sensitive contracts in your environment.
-- **Versioned models**: Store classifier versions and dataset hashes for reproducibility.
-
-## Contributing
-Issues and PRs are welcome. Please open an issue for architectural questions or to propose improvements to the `dev` branch pipeline.
+## Future Plans
+- Set up and configure jobs to parse, extract the PDF, Word content and ingest it to  the Agent
+- Store the JSON output from Agent to a Object store and Map with the source document
+- Seemless integration between Web Front end, and Object store
+- Setup MLFlow - Tracebility, Auditing 
 
 ## License
-TBD (add your license text or `LICENSE` file here).
+Apache 3.0 
