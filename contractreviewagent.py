@@ -57,7 +57,7 @@ def extract_risklabel_clauses(contract_text):
         tool_calls = response.message.tool_calls
         for tool_call in tool_calls:
             tool_name = tool_call["function"]["name"]
-            print(f"Tool call detected: {tool_name}")
+            
             arguments = tool_call["function"]["arguments"]
 
             clause_text = arguments.get('clause_text', '')
@@ -69,15 +69,16 @@ def extract_risklabel_clauses(contract_text):
 
             # Call matching Python function
             if tool_name == "label_clause":
-                result = label_clause(**args)
-                print(f"ClauseTitle: {clause_title} , Clause: {clause_text} , Labelled clause: {result}")
+                result = label_clause(**args)                
                 labeled_clauses.append(Clause(title=clause_title, text=clause_text, label=result))
+                indicator = "\033[91mNegative\033[91m"  if result.endswith('negative') else "\033[94mPositive\033[94m"    
+                print(f"\033[92mTool call detected: {tool_name}, Title={clause_title},\033[0m Label={ indicator}")
         ClauseListAdapter = TypeAdapter(ClauseList)
         # Serialize to JSON (returns bytes)
-        print(f"Extracted clauses: {labeled_clauses}")
+        
         json_bytes = ClauseListAdapter.dump_json(labeled_clauses)
         json_str = json_bytes.decode("utf-8")
-        print(f"JSON output: {json_str}")
+        
         return  json_str  
                
     else:

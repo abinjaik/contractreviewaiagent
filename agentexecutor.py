@@ -57,7 +57,7 @@ if __name__ == "__main__":
     print(f"Extracted clauses , starting time: {datetime.now()}")
 
     clauses = agent_executor(contract_text)
-    print(f"Extracted clauses: {clauses}")
+    #print(f"Extracted clauses: {clauses}")
 
         # Define output folder and file
     output_folder = "extracted_clauses"

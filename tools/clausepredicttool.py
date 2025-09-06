@@ -52,8 +52,8 @@ tools = [
 
 if __name__ == "__main__":
     # Example usage
-    clause_text = "Client waives any right to withhold payment for defective or incomplete work."
-    clause_title = "Fees and Payment"
+    clause_text = "Provider will re-perform nonconforming services at no additional cost."
+    clause_title = "8.2 License"
     
     label = label_clause(clause_text, clause_title)
-    print(f"Predicted label for the clause '{clause_title}': {label}")
+    print(f"Predicted label for the clause '{clause_text}': {label}")
